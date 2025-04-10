@@ -1,3 +1,7 @@
+body {
+    background-color: #EAEAEA;
+}
+
 #root {
     display: flex;
     flex-direction: column;
@@ -6,20 +10,26 @@
 
 .navbar {
     height: 60px;
-    width: 100%;
+    width: 90%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0 15px;
-    background: lightgray;
-
+    background: white;
+    margin: 20px;
+    border: 1px solid #EAEAEA;
+    border-radius: 105px;
 }
 
 .navbar__buttons {
-    align-items: end;
     display: flex;
+    align-items: center;
 }
+
 .navbar__logo {
-    align-self: start;
     display: flex;
+    align-items: center;
+}
+.navbar__text {
+    text-decoration: none;
+    color: black;
 }
