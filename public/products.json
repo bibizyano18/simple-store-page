@@ -1,0 +1,20 @@
+[
+  {
+    "img": "/assets/airpods.png",
+    "title": "AirPods",
+    "price": "4990",
+    "rating": "4.6"
+  },
+  {
+    "img": "/assets/airpods2.png",
+    "title": "AirPods 2",
+    "price": "6990",
+    "rating": "4.2"
+  },
+  {
+    "img": "/assets/airpods3.png",
+    "title": "AirPods 3",
+    "price": "5990",
+    "rating": "4.9"
+  }
+]
