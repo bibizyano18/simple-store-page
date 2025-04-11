@@ -1,0 +1,59 @@
+.navbar {
+    height: 60px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    background: white;
+    margin: 20px;
+    border: 1px solid #EAEAEA;
+    border-radius: 105px;
+}
+
+.navbar__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+}
+.navbar__text {
+    text-decoration: none;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 100%;
+}
+
+.cart__icon__link {
+    text-decoration: none; /* Убирает подчеркивание у ссылки */
+    color: inherit; /* Наследует цвет от родителя */
+    display: inline-block; /* Обеспечивает правильное отображение блока */
+}
+
+.cart__icon {
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+}
+.heart__icon {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+}
+
+.cart__count {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    top: -5px; /* Настройте положение счетчика */
+    right: -10px; /* Настройте положение счетчика */
+    background-color: #FFA542;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
