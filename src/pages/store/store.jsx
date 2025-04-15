@@ -35,18 +35,20 @@ const Store = () => {
                 <label className={classes.label__text}>Наушники</label>
                 <div className={classes.items}>
                     <div className={classes.item}>
-
-                        <img src="/assets/airpods.png" alt="Airpods"></img>
+                        <img className={classes.img} src="/assets/airpods.png" alt="Airpods"></img>
+                        <div className={classes.item__info}>
+                            <label className={classes.item__name_text}>Airpods</label>
+                            <label className={classes.item__price}>4990</label>
+                            <button className={classes.item__buy_button} onClick={addItemToCart}>Купить</button>
+                        </div>
+                    </div>
+                    <div className={classes.item}>
+                        <img className={classes.img} src="/assets/airpods2.png" alt="Airpods"></img>
                         <button onClick={addItemToCart}>Добавить товар</button>
                         <label className={classes.label__text}>Airpods</label>
                     </div>
                     <div className={classes.item}>
-                        <img src="/assets/airpods2.png" alt="Airpods"></img>
-                        <button onClick={addItemToCart}>Добавить товар</button>
-                        <label className={classes.label__text}>Airpods</label>
-                    </div>
-                    <div className={classes.item}>
-                        <img src="/assets/airpods3.png" alt="Airpods"></img>
+                        <img className={classes.img} src="/assets/airpods3.png" alt="Airpods"></img>
                         <button onClick={addItemToCart}>Добавить товар</button>
                         <label className={classes.label__text}>Airpods</label>
                     </div>
