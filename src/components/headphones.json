@@ -1,35 +1,35 @@
 {
   "products": [
     {
-      "id": 0,
+      "id": 187363,
       "img": "/assets/airpods.png",
       "title": "Apple BYZ S8521",
       "price": "4990",
       "rating": "4.6"
     },
     {
-      "id": 1,
+      "id": 209827,
       "img": "/assets/airpods2.png",
       "title": "Apple EarPods",
       "price": "6990",
       "rating": "4.2"
     },
     {
-      "id": 2,
+      "id": 387621,
       "img": "/assets/airpods3.png",
       "title": "Apple EarPods 2",
       "price": "5990",
       "rating": "4.9"
     },
     {
-      "id": 3,
+      "id": 498276,
       "img": "/assets/airpods3.png",
       "title": "AirPods 4",
       "price": "6990",
       "rating": "5"
     },
     {
-      "id": 4,
+      "id": 576527,
       "img": "/assets/airpods2.png",
       "title": "Apple AirPods 2",
       "price": "10990",
@@ -38,21 +38,21 @@
   ],
   "products__wireless": [
     {
-      "id": 0,
+      "id": 697316,
       "img": "/assets/wireless.png",
       "title": "Apple AirPods",
       "price": "19990",
       "rating": "4.1"
     },
     {
-      "id": 1,
+      "id": 712736,
       "img": "/assets/wireless2.png",
       "title": "Apple AirPods 2",
       "price": "16990",
       "rating": "4.2"
     },
     {
-      "id": 2,
+      "id": 876521,
       "img": "/assets/wireless3.png",
       "title": "BOROFONE BO4",
       "price": "7540",

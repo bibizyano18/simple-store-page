@@ -86,6 +86,7 @@
     border: none;
 }
 .item__buy_button:hover {
+    color: #FFA542;
     cursor: pointer;
     border-radius: 15px;
 }

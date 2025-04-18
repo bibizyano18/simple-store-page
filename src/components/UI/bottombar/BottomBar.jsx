@@ -24,9 +24,15 @@ const BottomBar = () => {
                 </div>
             </div>
             <div className={classes.social__networks__div}>
-                <VkSVG className={classes.svg}></VkSVG>
-                <TgSVG className={classes.svg}></TgSVG>
-                <WhatsappSVG className={classes.svg}></WhatsappSVG>
+                <Link to="https://vk.ru/qpick">
+                    <VkSVG className={classes.svg}/>
+                </Link>
+                <Link to="https://t.me/qpick">
+                    <TgSVG className={classes.svg}/>
+                </Link>
+                <Link to="https://whatsapp.com/qpick">
+                    <WhatsappSVG className={classes.svg}/>
+                </Link>
             </div>
         </div>
     );
