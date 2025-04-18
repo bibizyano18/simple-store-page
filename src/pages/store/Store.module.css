@@ -5,6 +5,7 @@
     line-height: 100%;
     letter-spacing: 0;
     color: #838383;
+    margin-left: 15px;
 }
 .main {
     width: 90%;
@@ -14,38 +15,44 @@
     background: transparent;
 }
 .items {
-    justify-content: space-between;
+    justify-content: initial;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
     display: flex;
     align-content: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .item {
-    /*height: 100%;*/
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background: white;
     border-radius: 30px;
-    margin-left:  5px;
-    margin-right:  5px;
+    margin: 15px;
+    flex: 1 1 auto;
 }
 .img {
     align-self: center;
+    justify-self: center;
     padding: 20px;
     max-width: 70%;
     height: auto;
 }
+.img:hover {
+    cursor: pointer;
+    border-radius: 15px;
+/*    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
+}
 .item__info {
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     height: 80px;
     /*background: whitesmoke;*/
 }
-.item__name_text {
+.item__name__text {
     font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 17px;
@@ -73,11 +80,38 @@
     line-height: 100%;
     letter-spacing: 0;
     position: absolute;
-    bottom: 5px;
+    bottom: 7px;
     right: 10px;
     background-color: transparent;
     border: none;
 }
-.item__buy_button1:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+.item__buy_button:hover {
+    cursor: pointer;
+    border-radius: 15px;
+}
+.item__rating__svg {
+    position: absolute;
+    bottom: 5px;
+    left: 18px;
+}
+.item__rating {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #838383;
+    position: absolute;
+    bottom: 7px;
+    left: 55px;
+}
+@media (min-width: 1000px) {
+    .item {
+        flex: 1 1 25%;
+    }
+}
+@media (max-width: 1000px) {
+    .item {
+        flex: 1 1 45%;
+    }
 }

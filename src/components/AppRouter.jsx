@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
 import Basket from "../pages/basket";
-import Store from "../pages/store/store";
+import Store from "../pages/store/Store";
 import NotFound from "../pages/not-found";
 
 const AppRouter = () => {

@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 
 const Navbar = () => {
     const [basketCount, setBasketCount] = useState(0);
-    //console.log(basketCount);
 
     useEffect(() => {
         // Обновляем состояние при монтировании компонента
