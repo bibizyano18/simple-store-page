@@ -4,11 +4,6 @@ import { ReactComponent as RatingSvg } from './rating.svg';
 const Item = ({product}) => {
 
     useEffect(() => {
-        // Устанавливаем начальное значение при монтировании компонента
-        if (sessionStorage.getItem('basketCount')) {
-            sessionStorage.setItem('basketCount', '0');
-
-        }
         if (sessionStorage.getItem('basketProducts')) {
             const basketProducts = [];
             sessionStorage.setItem('basketProducts', JSON.stringify(basketProducts));
@@ -16,16 +11,10 @@ const Item = ({product}) => {
     }, []);
 
     const addItemToCart = () => {
-        console.log(product.id);
-        //const basket = JSON.parse(sessionStorage.getItem('basketCount'));
-        //basket.push(product.id); // basket v array
-        //sessionStorage.setItem('basketProducts', JSON.stringify(basket));
 
-
-        let count = parseInt(sessionStorage.getItem('basketCount')) || 0;
-        count += 1;
-        sessionStorage.setItem('basketCount', count.toString());
-
+        const basket = JSON.parse(sessionStorage.getItem('basketProducts')) || [];
+        basket.push(product.id);
+        sessionStorage.setItem('basketProducts', JSON.stringify(basket));
 
         // Обновляем состояние в Navbar
         const event = new Event('basketUpdated');

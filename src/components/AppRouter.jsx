@@ -1,8 +1,8 @@
 import React from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
-import Basket from "../pages/basket";
+import Basket from "../pages/basket/Basket";
 import Store from "../pages/store/Store";
-import NotFound from "../pages/not-found";
+import NotFound from "../pages/Not-found";
 
 const AppRouter = () => {
     return (

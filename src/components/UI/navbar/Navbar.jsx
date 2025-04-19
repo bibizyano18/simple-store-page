@@ -9,13 +9,13 @@ const Navbar = () => {
 
     useEffect(() => {
         // Обновляем состояние при монтировании компонента
-        const count = parseInt(sessionStorage.getItem('basketCount'));
-        setBasketCount(count);
+        const basket = JSON.parse(sessionStorage.getItem('basketProducts')) || [];
+        setBasketCount(basket.length);
 
         // Обновляем состояние при изменении данных в sessionStorage
         const handleBasketUpdate = () => {
-            const count = parseInt(sessionStorage.getItem('basketCount'));
-            setBasketCount(count);
+            const basket = JSON.parse(sessionStorage.getItem('basketProducts')) || [];
+            setBasketCount(basket.length);
 
         };
 
