@@ -3,7 +3,6 @@ import classes from './Store.module.css';
 import Item from "./Item";
 
 const Items = (products) => {
-
     return (
         <div className={classes.items}>
             {products.props.map((product, index) =>
