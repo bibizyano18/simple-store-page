@@ -125,6 +125,7 @@
 }
 .item__price__remove__div {
     display: flex;
+    width: 20%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -135,10 +136,11 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: center;
-    width: 40%;
+    align-items: end;
+    width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-left: 100px;
 }
 .box {
     margin-top: 15px;
@@ -179,7 +181,13 @@
     height: 100%;
 }
 .final__price {
-
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: black;
+    margin-right: 15px;
 }
 @media (min-width: 1000px) {
 
@@ -189,11 +197,16 @@
         flex-direction: column;
     }
     .result__quantity {
-        width: 100%;
+        width: 95%;
         align-self: center;
+        justify-self: center;
+        padding-left: 0;
         margin-top: 0;
     }
     .box {
         margin-left: 0;
+    }
+    .items {
+        margin-bottom: 0;
     }
 }
