@@ -17,19 +17,43 @@ const BasketItem = (item) => {
         window.dispatchEvent(event);
     }*/
 
-
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(item.props.basketCount);
 
     function handlePlus() {
-        setCount(count + 1)
-        item.editPrice(parseInt(item.props.price));
+        item.props.basketCount += 1;
+        setCount(item.props.basketCount);
+        const basket = JSON.parse(sessionStorage.getItem('basketProducts')) || [];
+        basket.forEach(bas => {
+            if (bas.id === item.props.id) {
+                bas.basketCount = item.props.basketCount;
+            }
+        })
+        sessionStorage.setItem('basketProducts', JSON.stringify(basket));
+
+        const event = new Event('basketUpdated');
+        const event2 = new Event('priceUpdated');
+        window.dispatchEvent(event);
+        window.dispatchEvent(event2);
     }
 
     function handleMinus() {
-        if (count > 1) {
-            setCount(count - 1)
-            item.editPrice(parseInt(item.props.price)*(-1));
+        if (item.props.basketCount > 1) {
+            item.props.basketCount -= 1;
+            setCount(item.props.basketCount);
+            const basket = JSON.parse(sessionStorage.getItem('basketProducts')) || [];
+            basket.forEach(bas => {
+                if (bas.id === item.props.id) {
+                    bas.basketCount = item.props.basketCount;
+                }
+            })
+            sessionStorage.setItem('basketProducts', JSON.stringify(basket));
+
+            const event = new Event('basketUpdated');
+            const event2 = new Event('priceUpdated');
+            window.dispatchEvent(event);
+            window.dispatchEvent(event2);
         }
+
     }
 
     return (

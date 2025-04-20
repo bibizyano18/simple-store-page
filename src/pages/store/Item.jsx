@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import classes from "./Store.module.css";
 import { ReactComponent as RatingSvg } from './rating.svg';
 const Item = ({product}) => {
+
     useEffect(() => {
         if (sessionStorage.getItem('basketProducts')) {
             const basketProducts = [];
@@ -12,10 +13,10 @@ const Item = ({product}) => {
     const addItemToCart = () => {
 
         const basket = JSON.parse(sessionStorage.getItem('basketProducts')) || [];
-        basket.push(product);
+        basket.push({...product, basketCount: 1});
         sessionStorage.setItem('basketProducts', JSON.stringify(basket));
 
-        // Обновляем состояние в Navbar
+        // обновляем состояние в Navbar
         const event = new Event('basketUpdated');
         window.dispatchEvent(event);
     };

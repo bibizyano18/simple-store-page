@@ -6,16 +6,25 @@ import {Link} from "react-router-dom";
 
 const Navbar = () => {
     const [basketCount, setBasketCount] = useState(0);
-
+    function logoClick() {
+        setBasketCount(0);
+    }
     useEffect(() => {
         // Обновляем состояние при монтировании компонента
         const basket = JSON.parse(sessionStorage.getItem('basketProducts')) || [];
-        setBasketCount(basket.length);
-
+        if (basket) {
+            setBasketCount(0);
+            basket.forEach((item) => {
+                setBasketCount(b => b + item.basketCount);
+            })
+        }
         // Обновляем состояние при изменении данных в sessionStorage
         const handleBasketUpdate = () => {
             const basket = JSON.parse(sessionStorage.getItem('basketProducts')) || [];
-            setBasketCount(basket.length);
+            setBasketCount(0);
+            basket.forEach((item) => {
+                setBasketCount(b => b + item.basketCount);
+            })
 
         };
 
@@ -29,7 +38,7 @@ const Navbar = () => {
     return (
         <div className={classes.navbar}>
             <div className={classes.navbar__logo}>
-                <Link to="/store" className={classes.navbar__text}>QPICK</Link>
+                <Link to="/store" className={classes.navbar__text} onClick={logoClick}>QPICK</Link>
             </div>
             <div className={classes.navbar__buttons}>
                 <div className={classes.heart__icon}>

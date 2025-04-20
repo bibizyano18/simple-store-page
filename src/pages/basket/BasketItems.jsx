@@ -1,33 +1,44 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from "./Basket.module.css";
 import BasketItem from "./BasketItem";
 
 const BasketItems = (basket) => {
 
-    const [counter, setCounter] = useState(0);
 
-    let startCounter = 0;
+    const [startPrice, setStartPrice] = useState(0);
 
-    basket.props.forEach(item => {
-        startCounter += parseInt(item.price);
-    })
+    useEffect( ()  => {
+        setStartPrice(0);
+        basket.props.forEach(bas => {
+            setStartPrice(s => s + parseInt(bas.price) * bas.basketCount);
+        })
 
-    function editPrice(price) {
-        setCounter(counter + price);
-    }
+        const handlePriceUpdate = () => {
+            setStartPrice(0);
+            basket.props.forEach(bas => {
+                setStartPrice(s => s + parseInt(bas.price) * bas.basketCount);
+            })
+        }
+        window.addEventListener('priceUpdated', handlePriceUpdate);
+
+        return () => {
+            window.removeEventListener('priceUpdated', handlePriceUpdate);
+        };
+    }, [basket.props]);
+
 
     return (
         <div className={classes.page}>
             <div className={classes.items}>
-                {basket.props.map((item) =>
-                    <BasketItem key={item.id} props={item} editPrice={editPrice} />
+                {basket.props.map((item, index) =>
+                    <BasketItem key={index} props={item} />
                 )}
             </div>
             <div className={classes.result__quantity}>
                 <div className={classes.box}>
                     <div className={classes.final__price__div}>
                         <label className={classes.label__text}>ИТОГО</label>
-                        <label className={classes.final__price}>{startCounter + counter} ₽</label>
+                        <label className={classes.final__price}>{startPrice} ₽</label>
                     </div>
                     <button className={classes.button}>Перейти к оформлению</button>
                 </div>
